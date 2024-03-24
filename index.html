@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    /* CSS for customizing the audio player */
+    .audio-player {
+        width: 300px;
+        margin: 20px;
+        position:relative;
+        margin-left: 4em;
+    }
+    .audio-player audio {
+        width: 100%;
+    }
+    .audio-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .audio-controls button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .audio-controls button:hover {
+        background-color: #0056b3;
+    }
+</style>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" class="form">
+      <h1>LOGIN</h1>
+      <div class="username">
+        <input type="text" name="" id="" placeholder="Username" required />
+                </div>
+                <div class="username">
+        <input type="password" required placeholder="Password" name="" id="" />
+          
+      </div>
+      <div class="c-box">
+        
+        <label class="ii" for=""><input  type="checkbox" name="" id="" /> Remember me </label> <a href="">Forgot password</a>
+      </div>
+       <button type="submit" class="btn">Login</button>
+        
+      </div>
+      <div class="register">
+       <p> Don't have an account? <a href="">Register</a></p>
+       
+      </div>
+    </form>
+    
+ <div class="audio-player">
+    <audio controls>
+        <source src="Powfu  Death Bed (slowed  reverb).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="audio-controls">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="restart()">Restart</button>
+        <button onclick="volumeUp()">Volume Up</button>
+        <button onclick="volumeDown()">Volume Down</button>
+    </div>
+</div>
+<script>
+    // JavaScript for custom audio player controls
+    const audio = document.querySelector('audio');
+
+    function playPause() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+
+    function restart() {
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+    function volumeUp() {
+        if (audio.volume < 1) {
+            audio.volume += 0.1;
+        }
+    }
+
+    function volumeDown() {
+        if (audio.volume > 0) {
+            audio.volume -= 0.1;
+        }
+    }
+</script>
+
+  </body>
+</html>
